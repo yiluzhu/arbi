@@ -1,0 +1,45 @@
+<html>
+<head>
+    <script type="text/javascript">
+        function validate_form()
+        {
+            var formlst = ["start_date", "end_date"];
+            var idx;
+            for (idx in formlst)
+            {
+                var x = document.forms["vol_stats"];
+                if ( Object.prototype.toString.call(x) === "[object Date]")
+                {
+                    if ( isNaN( x.getTime() ) )
+                    {
+                        alert(formlst[idx] + " must be filled out");
+                        return false;
+                    }
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+<p><h1>Odds History Analytics Tool</h1></p>
+<p><h4>Version: {{ ver }} </h4></p>
+
+<form name="vol_stats" action="/tools/oh/result" onsubmit="return validate_form()" method="post">
+
+    <!--<p>Start date: <input type="date" name="start_date" value="2016-07-03"/></p>-->
+    <!--<p>End date:   <input type="date" name="end_date" value="2016-07-05"/></p>-->
+    <!--<p>Price movement: <input type="text" name="price_vol" value="0.1"/></p>-->
+
+    <p>Start date: <input type="date" name="start_date" value="2016-08-30"/></p>
+    <p>End date:   <input type="date" name="end_date" value="2016-08-31"/></p>
+    <p>Price movement: <input type="text" name="price_vol" value="0.11"/></p>
+    <p>Time period: <input type="text" name="time_period" value="5"/> seconds </p>
+
+    <p><input type="submit" name="find" value="Submit"/></p>
+
+</form>
+
+</body>
+</html>

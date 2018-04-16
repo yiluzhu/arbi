@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>OH Tool</title>
+    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap-datetimepicker.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}" type="text/javascript" language="javascript"></script>
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}" type="text/javascript" language="javascript"></script>
+    <script src="{{ url_for('static', filename='js/language/TW.js') }}" type="text/javascript" language="javascript"></script>
+    <script src="{{ url_for('static', filename='js/login.js') }}" type="text/javascript" language="javascript"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-4"></div>
+        <div class="col-xs-4" style="margin-top:200px;" align="center">
+            <form action="/tools/oh/login" method="post" class="login-form-border" id="loginForm" style="padding:20px;">
+                <!--<input type="hidden" name="next" value="/index"/>-->
+                <!--<input type="hidden" name="errorCode" value="" id="errorCode">-->
+                <!--<input type="hidden" name="local" value="" id="local">-->
+
+                <div id="error" style="color:red;height:35px;"></div>
+                <div class="input-group" style="margin-top:5px;">
+                    <!--<span class="input-group-addon glyphicon glyphicon-globe" id="basic-addon1"></span>-->
+                    <!--<div class="btn-group" style="margin-top:1px;width:240px;">-->
+                        <!--<button type="button" class="btn btn-default dropdown-toggle" style='width:240px;' id="language" data-toggle="dropdown"-->
+                                <!--aria-haspopup="true" aria-expanded="false">-->
+                            <!--<div style="float:left;width:200px;" align="left" id="languageName">&nbsp;繁體</div>-->
+                            <!--<div style="float:left;"><span class="caret"></span></div>-->
+                        <!--</button>-->
+                        <!--<ul class="dropdown-menu" aria-labelledby="language">-->
+                            <!--<li><a href="javascript:changeLanguage('TW');">繁體</a></li>-->
+                            <!--<li><a href="javascript:changeLanguage('EN');">English</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                </div>
+                <div class="input-group" style="margin-top:25px;">
+                    <span class="input-group-addon glyphicon glyphicon-user"></span>
+                    <input type="text" class="form-control" style="margin-top: 1px;" id="username" name="username" value=""
+                           placeholder="username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group" style="margin-top: 25px;">
+                    <span class="input-group-addon glyphicon glyphicon-lock"></span>
+                    <input type="password" class="form-control" style="margin-top: 1px;" id="password" name="password" value=""
+                           placeholder="password" aria-describedby="basic-addon1">
+                </div>
+                <!--<div class="input-group" style="margin-top: 25px; align=left">-->
+                <!--<span class="input-group-addon glyphicon glyphicon-qrcode" id="basic-addon1"></span>-->
+                <!--<input type="text" class="form-control" id="verifyCode" name="verifyCode" placeholder="code" style="width:140px;margin-top: 1px;"-->
+                       <!--aria-describedby="basic-addon1"/>-->
+                <!--<a href="javascript:refreshVerifyCode('/admin');"> <img id="verifyCodeImg" src="/admin/verify-code" alt="点击刷新" height="30px"></a>-->
+                <!--</div>-->
+                <div class="input-group" style="margin-top: 35px;margin-bottom:50px;">
+                    <input type="submit" value="Login"/>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-4"></div>
+    </div>
+</div>
+</body>
+</html>
